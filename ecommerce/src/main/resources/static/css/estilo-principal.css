@@ -1,6 +1,6 @@
 body {
   padding-top: 90px;
-  
+  padding-bottom: 90px;
 }
 
 .nav-menu {
@@ -25,4 +25,8 @@ body {
 	background-color: #5C5863;
 	border-color: #5C5863;
 	box-shadow: 0 0 0 1.5px #5C5863;	
+}
+
+.btn-registrar{
+	margin-left: 185px;
 }
