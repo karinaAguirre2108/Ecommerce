@@ -1,3 +1,28 @@
 body {
-  padding-top: 56px;
+  padding-top: 90px;
+  
+}
+
+.nav-menu {
+	background-color: #E7006F;
+	padding-top:20px;
+	padding-bottom: 15px;
+}
+
+.inp-buscar:focus {
+	border: 1px solid #F4EDFF;	
+	box-shadow: 0 0 0 1.5px #F4EDFF;	
+}
+
+.btn-buscar{
+	color: #000000;
+	background-color: #F4EDFF;
+	border-color: #F4EDFF;
+}
+
+.btn-buscar:hover{
+	color: #ffffff;
+	background-color: #5C5863;
+	border-color: #5C5863;
+	box-shadow: 0 0 0 1.5px #5C5863;	
 }
