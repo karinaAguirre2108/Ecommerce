@@ -30,3 +30,23 @@ body {
 .btn-registrar{
 	margin-left: 185px;
 }
+
+.cabeceraCard{
+	background-color: #F5F3F3;
+	color:  #000000;
+}
+
+@font-face{
+	font-family: "fuente1";
+	src: url("../fonts/Market_Deco.ttf");
+}
+
+.letraCabeceraCard{
+	font-size: 120%;
+	color: black;
+	font-family: "fuente1";
+}
+
+.trper{
+	font-size: 110%;
+}
