@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Spring eCommerce</title>
+  <title>La Nono</title>
 
 
   <!-- Bootstrap core CSS -->
@@ -17,18 +17,16 @@
 
   <!-- Custom styles for this template -->
   <link th:href="@{/css/estilo-principal.css}" rel="stylesheet" type="text/css">
-
+  <link th:href= "@{img/icono.png}" rel="icon" type="image/x-icon">
 </head>
 
 <body>
 
 	<div th:fragment= "navegacion">
 		<!-- Navigation -->
-		<nav class="nav-menu navbar navbar-expand-lg navbar-dark fixed-top">
+				
+		<nav class="nav-menu-logo navbar navbar-expand-lg navbar-light fixed-top">
 			<div class="container">
-			
-			    <a class="navbar-brand" href="#">Spring eCommerce</a>
-			    
 			    <form class="form-inline my-2 my-lg-0" method="post"
 			      action="#">
 			      <input class="inp-buscar form-control mr-sm-2" type="search"
@@ -38,19 +36,40 @@
 			      <button class="btn-buscar btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 			    </form>
 			    
+			    <a class="navbar-brand" href="#">
+			    	<div class="div-logo">
+			    	<img src="img/logo.png" class="img-fluid img-logo" alt="logo">
+			    	</div>
+			    </a>
+			    
 			    <div class="collapse navbar-collapse" id="navbarResponsive">
 				    <ul class="navbar-nav ml-auto">
-					    <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
-					    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+					    <li class="nav-item"><a class="a-menu-logo nav-link active" href="carrito.html">Carrito</a></li>
+					    <li class="nav-item"><a class="a-menu-logo nav-link active" href="login.html">Iniciar Sesión</a></li>
 				    </ul>
 			    </div>
 			    
 		    </div>
 		</nav>
+		
+		<nav class="nav-menu navbar navbar-expand-lg navbar-dark ">
+			<div class="container">			    
+			    <div class="collapse navbar-collapse" id="navbarResponsive">
+				    <ul class="navbar-nav mx-auto my-auto">
+					    <li class="nav-item"><a class="a-menu nav-link active" href="caegoria1.html">Categoria1</a></li>
+					    <li class="nav-item"><a class="a-menu nav-link active" href="caegoria1.html">Categoria2</a></li>
+					</ul>
+			    </div>
+		    </div>
+		</nav>
+		
+		
 	</div>
+	
+	
 
     <!-- Footer -->
-    <footer class="sticky-footer bg-dark fixed-bottom" th:fragment="footer">
+    <footer class="sticky-footer fixed-bottom" th:fragment="footer">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Spring eCommerce 2021</p>
       </div>

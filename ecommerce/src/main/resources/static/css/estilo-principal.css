@@ -1,12 +1,52 @@
 body {
-  padding-top: 90px;
+  padding-top: 80px;
   padding-bottom: 90px;
 }
 
-.nav-menu {
-	background-color: #E7006F;
+.nav-menu-logo {
+	background-color: #ffffff;
 	padding-top:20px;
 	padding-bottom: 15px;
+	border-bottom:2px solid #F80044;
+}
+.nav-menu {
+	background-color: #F80044;
+	padding-top:20px;
+	padding-bottom: 15px;
+	height: 80px;
+}
+
+.a-menu-logo{
+	border: 2.5px solid #F80044;
+	margin: 5px;
+	border-radius: 5px;
+}
+.a-menu-logo:hover{
+	border: 2.5px solid #5C5863;
+	margin: 5px;
+	border-radius: 5px;
+}
+.a-menu{
+	border: 1px solid #F80044;
+	margin: 3px;
+	border-radius: 5px;
+}
+.a-menu:hover{
+	border: 1px solid #F4EDFF;
+	margin: 3px;
+	border-radius: 5px;
+}
+
+.div-logo{
+	margin-left:180px;
+	height: 50px;
+	width: 200px;
+}
+
+.img-logo{
+	height:100%;
+	width: 100%;
+	object-fit: cotain;
 }
 
 .inp-buscar:focus {
@@ -15,9 +55,9 @@ body {
 }
 
 .btn-buscar{
-	color: #000000;
-	background-color: #F4EDFF;
-	border-color: #F4EDFF;
+	color: #ffffff;
+	background-color: #F80044;
+	border-color: #F80044;
 }
 
 .btn-buscar:hover{
@@ -49,4 +89,9 @@ body {
 
 .trper{
 	font-size: 110%;
+}
+
+footer{
+	background-color: #7a7584;
+	color: #ffffff;
 }
