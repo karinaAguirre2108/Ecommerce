@@ -16,14 +16,15 @@ body {
 }
 
 .a-menu-principal{
+	font-size: 80%;
+	color: white;
 	border: 2.5px solid #F80044;
 	margin: 5px;
 	border-radius: 5px;
 }
 .a-menu-principal:hover{
-	border: 2.5px solid #5C5863;
-	margin: 5px;
-	border-radius: 5px;
+	text-decoration: underline;
+	color: rgb(228, 224, 224);
 }
 .a-menu-secundario{
 	margin: 3px;
@@ -100,6 +101,7 @@ body {
 }
 
 footer{
-	background-color: #4b4e5f;
-	color: #ffffff;
+	border-top: 1px solid #c5ceed;
+	background-color: #DCE1F4;
+	color: rgb(128,128,128);
 }
