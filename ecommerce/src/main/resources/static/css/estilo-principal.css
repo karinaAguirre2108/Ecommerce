@@ -3,38 +3,34 @@ body {
   padding-bottom: 90px;
 }
 
-.nav-menu-logo {
-	background-color: #ffffff;
-	padding-top:20px;
-	padding-bottom: 15px;
-	border-bottom:2px solid #F80044;
+.nav-menu-secundario {
+	background-color: #DCE1F4;
+	padding-top:5px;
+	padding-bottom: 5px;
 }
-.nav-menu {
+.nav-menu-principal {
 	background-color: #F80044;
 	padding-top:20px;
 	padding-bottom: 15px;
 	height: 80px;
 }
 
-.a-menu-logo{
+.a-menu-principal{
 	border: 2.5px solid #F80044;
 	margin: 5px;
 	border-radius: 5px;
 }
-.a-menu-logo:hover{
+.a-menu-principal:hover{
 	border: 2.5px solid #5C5863;
 	margin: 5px;
 	border-radius: 5px;
 }
-.a-menu{
-	border: 1px solid #F80044;
+.a-menu-secundario{
 	margin: 3px;
 	border-radius: 5px;
 }
-.a-menu:hover{
-	border: 1px solid #F4EDFF;
-	margin: 3px;
-	border-radius: 5px;
+.a-menu-secundario:hover{
+	font-size: 112%;
 }
 
 .div-logo{
@@ -87,11 +83,23 @@ body {
 	font-family: "fuente1";
 }
 
+@font-face{
+	font-family: "fuente2";
+	src: url("../fonts/NixieOne.ttf");
+}
+
+.letraMenuSecundario{
+	font-size: 110%;
+	color: black;
+	font-family: "fuente2";
+	
+}
+
 .trper{
 	font-size: 110%;
 }
 
 footer{
-	background-color: #7a7584;
+	background-color: #4b4e5f;
 	color: #ffffff;
 }
