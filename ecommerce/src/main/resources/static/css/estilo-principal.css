@@ -1,49 +1,55 @@
 body {
-  padding-top: 80px;
-  padding-bottom: 90px;
+	padding-top: 170px;
 }
 
 .nav-menu-secundario {
-	background-color: #DCE1F4;
-	padding-top:5px;
-	padding-bottom: 5px;
+	background-color: #DCE1F4;	
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;	
 }
 .nav-menu-principal {
 	background-color: #F80044;
-	padding-top:20px;
-	padding-bottom: 15px;
-	height: 80px;
+	padding-top:0.2%;
+	padding-bottom: 0.2%;
+	padding-left: 5%;
+	padding-right:5%;
 }
 
 .a-menu-principal{
-	font-size: 80%;
-	color: white;
-	border: 2.5px solid #F80044;
-	margin: 5px;
-	border-radius: 5px;
+	font-size: 90%;
+	color: white;		
 }
+
 .a-menu-principal:hover{
 	text-decoration: underline;
 	color: rgb(228, 224, 224);
 }
 .a-menu-secundario{
-	margin: 3px;
-	border-radius: 5px;
+	color: black; 
 }
 .a-menu-secundario:hover{
-	font-size: 112%;
+	
+	color: black;
+	border: 1px solid #F80044;
+	border-radius: 5px; 
+	
 }
 
-.div-logo{
-	margin-left:180px;
-	height: 50px;
-	width: 200px;
+.tamano-icono{
+	font-size: 120%;
 }
 
 .img-logo{
-	height:100%;
-	width: 100%;
-	object-fit: cotain;
+	height:auto;
+	max-width: 60%;	
+}
+.inp-buscar{
+	width: 70%;
+	display: inline;
+	height: 35px;
+	border-radius: 4px;
 }
 
 .inp-buscar:focus {
@@ -52,16 +58,15 @@ body {
 }
 
 .btn-buscar{
+	font-size: 108%;
 	color: #ffffff;
-	background-color: #F80044;
-	border-color: #F80044;
+	background-color:  #F80044;
+	border: none;
+	border-radius: 100%;
 }
 
 .btn-buscar:hover{
-	color: #ffffff;
-	background-color: #5C5863;
-	border-color: #5C5863;
-	box-shadow: 0 0 0 1.5px #5C5863;	
+	color: rgb(228, 224, 224);
 }
 
 .btn-registrar{
@@ -86,11 +91,11 @@ body {
 
 @font-face{
 	font-family: "fuente2";
-	src: url("../fonts/NixieOne.ttf");
+	src: url("../fonts/CaviarDreams_Bold.ttf");
 }
 
 .letraMenuSecundario{
-	font-size: 110%;
+	font-size: 100%;
 	color: black;
 	font-family: "fuente2";
 	
@@ -104,4 +109,17 @@ footer{
 	border-top: 1px solid #c5ceed;
 	background-color: #DCE1F4;
 	color: rgb(128,128,128);
+}
+
+.prueba{
+	font-size: 500%;
+	
+}
+
+.btn-menu{
+	padding: 3px;
+	padding-left:5px;
+	padding-right:5px;
+	color: #F80044;
+	
 }
