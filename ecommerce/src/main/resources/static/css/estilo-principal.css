@@ -1,5 +1,5 @@
 body {
-	padding-top: 170px;
+	margin-top: 160px;
 }
 
 .nav-menu-secundario {
@@ -69,8 +69,21 @@ body {
 	color: rgb(228, 224, 224);
 }
 
-.btn-registrar{
-	margin-left: 185px;
+.btn-buscar-sm{
+	font-size: 108%;
+	color: #F80044;
+	background-color: transparent;
+	border: none;
+}
+
+.btn-buscar-sm:hover{
+	border: 1px solid #F80044;
+	border-radius: 5px; 
+}
+
+.modal-label{
+	background-color: #F5F3F3;
+	
 }
 
 .cabeceraCard{
@@ -105,12 +118,6 @@ body {
 	font-size: 110%;
 }
 
-footer{
-	border-top: 1px solid #c5ceed;
-	background-color: #DCE1F4;
-	color: rgb(128,128,128);
-}
-
 .prueba{
 	font-size: 500%;
 	
@@ -122,4 +129,21 @@ footer{
 	padding-right:5px;
 	color: #F80044;
 	
+}
+
+.btn-menu:hover {
+	border: 1px solid #F80044;
+	border-radius: 5px; 
+}
+
+.modal-cabecera{
+	background-color: #DCE1F4;
+	text-align: center;
+}
+
+footer{
+	border-top: 1px solid #c5ceed;
+	background-color: #DCE1F4;
+	color: rgb(128,128,128);
+	margin-top: 5%;
 }
