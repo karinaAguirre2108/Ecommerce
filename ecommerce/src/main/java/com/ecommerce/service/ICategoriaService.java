@@ -1,5 +1,6 @@
 package com.ecommerce.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.ecommerce.model.Categoria;
@@ -10,5 +11,6 @@ public interface ICategoriaService {
 	public Optional<Categoria> get (Integer id);
 	public void update(Categoria categoria);
 	public void delete (Integer id);
+	public List<Categoria> getAllCategoria();
 
 }

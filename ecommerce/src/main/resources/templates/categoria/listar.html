@@ -25,16 +25,16 @@
 	                 	<table class="table table-hover">
 	                 		<thead>
 	                 			<tr class="trper">
-							      <th >#</th>
+							      <th >Id</th>
 							      <th class="w-50">Nombre</th>
 							      <th class="text-center">Editar</th>
 							      <th class="text-center">Eliminar</th>
 							    </tr>
 							 </thead>
 							 <tbody>
-							 	<tr>
-							      <td> </td>
-							      <td> </td>
+							 	<tr th:each="c:${categoria}">
+							      <td th:text="${c.idCategoria}"> </td>
+							      <td th:text="${c.nombreCategoria}"> </td>
 							      <td class="text-center"> 
 							      	   <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editarModal">
 							      	         <i class="fas fa-edit"></i><span class="d-none d-lg-inline"> Editar</span>
@@ -65,8 +65,7 @@
 					<h5 class="modal-title "  id="exampleModalLabel">Registrar Nueva Categoria</h5>
 					<a type="button" class="close text-dark" data-bs-dismiss="modal"> <i class="fas fa-times"></i></a>
 				</div>
-				<form 
-					method="post">
+				<form th:action="@{/categoria/guardar}"  method="post" >
 					<input type="hidden" />
 					<div class="modal-body colorTabla">
 						<div class="row">
@@ -76,8 +75,8 @@
 										class="input-group-text text-darck border border-secondary modal-label">
 										<i class="fas fa-edit mr-2"></i> NOMBRE</span>
 								</div>
-								<input type="text" class="form-control border border-secondary"
-								                 required />
+								<input type="text"  class="form-control border border-secondary" id="nombreCategoria" name="nombreCategoria"
+								                required />
 								<div class="invalid-feedback">Campo obligatorio</div>
 							</div>
 				
@@ -93,6 +92,7 @@
 						</button>
 					</div>
 				</form>
+				<script type="text/javascript" th:src="@{/js/validacion.js}"></script>
 			</div>
 		</div>
 	</div>

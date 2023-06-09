@@ -1,5 +1,6 @@
 package com.ecommerce.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +35,9 @@ public class CategoriaServiceImpl implements ICategoriaService {
 		categoriaRepository.deleteById(id);
 	}
 
+	@Override
+	public List<Categoria> getAllCategoria() {
+		return categoriaRepository.findAllByOrderByNombreCategoriaAsc();
+	}
+	
 }

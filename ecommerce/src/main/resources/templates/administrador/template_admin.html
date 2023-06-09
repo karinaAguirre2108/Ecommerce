@@ -34,7 +34,7 @@
 					    	</form>				
 						</div>
 						<div class="col-lg-4 col-md-10 col-sm-10 col-10 text-center mt-2 mt-sm-0 mb-2 mb-sm-0 ">
-							<a class="navbar-brand" href="#">					    	
+							<a class="navbar-brand" th:href="@{/administrador}">					    	
 						    		<img src="img/logo.png" class="img-fluid img-logo " alt="logo">
 					    	</a>				
 						</div>
@@ -65,9 +65,9 @@
 						<div class="collapse navbar-collapse col-lg-12 letraMenuSecundario justify-content-center" id="menu">
 
 							<div class="navbar-nav">
-									    <a class="a-menu-secundario nav-link active px-5" href="carrito.html">
+									    <a class="a-menu-secundario nav-link active px-5" th:href="@{/categoria}">
 									    Categoría</a>
-									    <a class="a-menu-secundario nav-link active px-5 " href="carrito.html">
+									    <a class="a-menu-secundario nav-link active px-5 " th:href="@{/producto}">
 									    Producto</a>
 									    <a class="a-menu-secundario nav-link active px-5" href="carrito.html">
 									    Proveedor</a>
