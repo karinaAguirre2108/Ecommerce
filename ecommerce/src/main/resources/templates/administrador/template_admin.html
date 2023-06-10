@@ -15,7 +15,7 @@
 
   <!-- Custom styles for this template -->
   <link th:href="@{/css/estilo-principal.css}" rel="stylesheet" type="text/css">
-  <link th:href= "@{img/icono.png}" rel="icon" type="image/x-icon">
+  <link th:href= "@{/img/icono.png}" rel="icon" type="image/x-icon">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
 						</div>
 						<div class="col-lg-4 col-md-10 col-sm-10 col-10 text-center mt-2 mt-sm-0 mb-2 mb-sm-0 ">
 							<a class="navbar-brand" th:href="@{/administrador}">					    	
-						    		<img src="img/logo.png" class="img-fluid img-logo " alt="logo">
+						    		<img src="/img/logo.png" class="img-fluid img-logo " alt="logo">
 					    	</a>				
 						</div>
 						<div class="col-lg-4 col-md-2 col-sm-2 col-2  d-flex justify-content-end mt-3 mb-3 ">
@@ -69,7 +69,7 @@
 									    Categoría</a>
 									    <a class="a-menu-secundario nav-link active px-5 " th:href="@{/producto}">
 									    Producto</a>
-									    <a class="a-menu-secundario nav-link active px-5" href="carrito.html">
+									    <a class="a-menu-secundario nav-link active px-5" th:href="@{/proveedor}">
 									    Proveedor</a>
 									    <a class="a-menu-secundario nav-link active px-5" href="carrito.html">
 									    Orden</a>
