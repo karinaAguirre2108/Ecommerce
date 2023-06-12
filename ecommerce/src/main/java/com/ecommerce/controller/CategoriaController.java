@@ -27,6 +27,11 @@ public class CategoriaController {
 		return "categoria/listar";
 	}
 	
+	@GetMapping("/registrar")
+	public String registrar() {
+		return "categoria/registrar";
+	}
+	
 	@PostMapping("/guardar")
 	public String guardar(Categoria categoria){
 		categoriaService.save(categoria);
@@ -38,14 +43,19 @@ public class CategoriaController {
 		Categoria categoria= new Categoria();
 		Optional<Categoria> optionalCategoria= categoriaService.get(idCategoria);
 		categoria = optionalCategoria.get();	
-		model.addAttribute("categoria", categoria);
-		
+		model.addAttribute("categoria", categoria);		
 		return "categoria/editar";
 	}
 	
 	@PostMapping("/actualizar")
 	public String update(Categoria categoria){
 		categoriaService.update(categoria);
+		return "redirect:/categoria";
+	}
+	
+	@GetMapping("/eliminar/{idCategoria}")
+	public String eliminar(@PathVariable Integer idCategoria) {
+		categoriaService.delete(idCategoria);
 		return "redirect:/categoria";
 	}
 	

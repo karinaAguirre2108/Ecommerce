@@ -113,6 +113,18 @@ body {
 	
 }
 
+@font-face{
+	font-family: "fuente3";
+	src: url("../fonts/CaviarDreams.ttf");
+}
+
+
+.letraBoton{
+	font-size: 120%;
+	color: white;
+	font-family: "fuente2";	
+}
+
 .trper{
 	font-size: 110%;
 }
@@ -141,8 +153,8 @@ body {
 }
 
 footer{
-	border-top: 1px solid #c5ceed;
-	background-color: #DCE1F4;
-	color: rgb(128,128,128);
+
+	background-color: #095873;
+	color: #c0c0c0;
 	margin-top: 5%;
 }

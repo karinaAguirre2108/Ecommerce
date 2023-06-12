@@ -1,5 +1,6 @@
 package com.ecommerce.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,11 @@ public class ProveedorServiceImpl implements IProveedorService{
 	@Override
 	public void delete(Integer id) {
 		proveedorRepository.deleteById(id);
+	}
+
+	@Override
+	public List<Proveedor> getAllProveedor() {
+		return proveedorRepository.findAllByOrderByMarcaProveedorAsc();
 	}
 
 }
