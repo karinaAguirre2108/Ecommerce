@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ecommerce.model.Categoria;
 import com.ecommerce.model.Proveedor;
@@ -33,8 +34,9 @@ public class ProveedorController {
 	}
 	
 	@PostMapping("/guardar")
-	public String guardar(Proveedor proveedor){
+	public String guardar(Proveedor proveedor, RedirectAttributes attribute){
 		proveedorService.save(proveedor);
+		attribute.addFlashAttribute("success", "Datos guardados con éxito!");
 		return "redirect:/proveedor";
 	}
 	
@@ -48,14 +50,16 @@ public class ProveedorController {
 	}
 	
 	@PostMapping("/actualizar")
-	public String update(Proveedor proveedor){
+	public String update(Proveedor proveedor, RedirectAttributes attribute){
 		proveedorService.update(proveedor);
+		attribute.addFlashAttribute("editar", "Datos actualizados con éxito!");
 		return "redirect:/proveedor";
 	}
 	
 	@GetMapping("/eliminar/{idProveedor}")
-	public String eliminar(@PathVariable Integer idProveedor) {
+	public String eliminar(@PathVariable Integer idProveedor, RedirectAttributes attribute) {
 		proveedorService.delete(idProveedor);
+		attribute.addFlashAttribute("eliminar", "Eliminado con éxito!");
 		return "redirect:/proveedor";
 	}
 	

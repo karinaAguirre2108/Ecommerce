@@ -85,8 +85,28 @@
 				
 				
 			</nav>
-		
+			
 		</div>
+		<!-- Mensaje -->
+				<div th:fragment="mensajes" class="row">
+					<div class="alert alert-success alert-dismissable col-12"
+						th:if="${guardar!=null}">
+						<label th:text="${guardar}"></label>
+						<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
+					</div>
+					<div class="alert alert-warning alert-dismissable col-12"
+						th:if="${editar!=null}">
+						<label th:text="${editar}"></label>
+						<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
+					</div>
+
+					<div class="alert alert-danger alert-dismissable col-12"
+						th:if="${eliminar!=null}">
+						<label th:text="${eliminar}"></label>
+						<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
+					</div>
+				</div>
+		
 	</div>
 	
 	<footer class="sticky-footer" th:fragment="footer">

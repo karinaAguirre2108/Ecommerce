@@ -8,8 +8,11 @@
 	<div class="container">
 		<div class="row">
 			<nav class="fixed-top" th:replace= "administrador/template_admin :: navegador">				
-			</nav>		
+			</nav>
+				
 		</div>
+		
+		<div th:replace="administrador/template_admin :: mensajes"></div>	
 		
 		<div class="row">
 			<div class="card w-100 p-4 mb-5" style="margin: auto auto;">
@@ -42,7 +45,7 @@
 								<i class="fas fa-ban"></i> Cancelar
 							</a>
 							<button type="submit" class="col-lg-3 col-md-4 col-sm-12 col-12 btn btn-primary  mb-3">
-								<i class="far fa-save"></i> Registrar Proveedor
+								<i class="far fa-save"></i> Registrar Categoría
 							</button>	
 							
 										

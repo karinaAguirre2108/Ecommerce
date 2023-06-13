@@ -8,8 +8,11 @@
 	<div class="container">
 		<div class="row">
 			<nav class="fixed-top" th:replace= "administrador/template_admin :: navegador">				
-			</nav>		
+			</nav>
+				
 		</div>
+		
+		<div th:replace="administrador/template_admin :: mensajes"></div>	
 		
 		<div class="row">
 			<div class="card w-100 p-4 mb-5" style="margin: auto auto;">

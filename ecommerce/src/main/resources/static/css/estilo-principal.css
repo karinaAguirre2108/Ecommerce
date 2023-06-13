@@ -3,7 +3,7 @@ body {
 }
 
 .nav-menu-secundario {
-	background-color: #DCE1F4;	
+	background-color: #DAE2FE;	
 	padding-left: 5%;
 	padding-right: 5%;
 	padding-top: 0.5%;
@@ -70,13 +70,13 @@ body {
 
 .btn-buscar-sm{
 	font-size: 108%;
-	color: #0F096A;
+	color: #095873;
 	background-color: transparent;
 	border: none;
 }
 
 .btn-buscar-sm:hover{
-	border: 1px solid #0F096A;
+	border: 1px solid #095873;
 	border-radius: 5px; 
 }
 
@@ -138,12 +138,12 @@ body {
 	padding: 3px;
 	padding-left:5px;
 	padding-right:5px;
-	color: #0F096A;
+	color: #095873;
 	
 }
 
 .btn-menu:hover {
-	border: 1px solid #0F096A;
+	border: 1px solid #095873;
 	border-radius: 5px; 
 }
 

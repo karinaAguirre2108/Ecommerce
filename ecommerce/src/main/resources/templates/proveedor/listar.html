@@ -8,8 +8,10 @@
 	<div class="container">
 		<div class="row">
 			<nav class="fixed-top" th:replace= "administrador/template_admin :: navegador">				
-			</nav>		
+			</nav>
+						
 		</div>
+		<div th:replace="administrador/template_admin :: mensajes"></div>
 				
 		<div class="row">			
 				<a class=" btn btn-primary mb-3"  th:href= "@{/proveedor/registrar}" >
