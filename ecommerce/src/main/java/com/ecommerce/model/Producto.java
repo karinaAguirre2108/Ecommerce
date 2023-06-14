@@ -1,10 +1,15 @@
 package com.ecommerce.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,7 +21,6 @@ public class Producto {
 	private Integer idProducto;
 	private String nombreProducto;
 	private String descripcionProducto;
-	private String imagenProducto;
 	private double precioCostoProducto;
 	private double precioVentaProducto;
 	private int stockProducto;
@@ -29,25 +33,29 @@ public class Producto {
 	
 	@ManyToOne
 	private Proveedor proveedor;
-	 
+	
+	@OneToMany (cascade = CascadeType.ALL ,mappedBy = "producto", orphanRemoval = true)
+	private List<Imagen> imagenesProducto;
+	
 	public Producto() {
-		
-	}
+        this.imagenesProducto = new ArrayList<>();
+    }
+	
 
-	public Producto(Integer idProducto, String nombreProducto, String descripcionProducto, String imagenProducto,
-			double precioCostoProducto, double precioVentaProducto, int stockProducto, Usuario usuario,
-			Categoria categoria, Proveedor proveedor) {
+	public Producto(Integer idProducto, String nombreProducto, String descripcionProducto, double precioCostoProducto,
+			double precioVentaProducto, int stockProducto, Usuario usuario, Categoria categoria, Proveedor proveedor,
+			List<Imagen> imagenesProducto) {
 		super();
 		this.idProducto = idProducto;
 		this.nombreProducto = nombreProducto;
 		this.descripcionProducto = descripcionProducto;
-		this.imagenProducto = imagenProducto;
 		this.precioCostoProducto = precioCostoProducto;
 		this.precioVentaProducto = precioVentaProducto;
 		this.stockProducto = stockProducto;
 		this.usuario = usuario;
 		this.categoria = categoria;
 		this.proveedor = proveedor;
+		this.imagenesProducto = imagenesProducto;
 	}
 
 	public Integer getIdProducto() {
@@ -72,14 +80,6 @@ public class Producto {
 
 	public void setDescripcionProducto(String descripcionProducto) {
 		this.descripcionProducto = descripcionProducto;
-	}
-
-	public String getImagenProducto() {
-		return imagenProducto;
-	}
-
-	public void setImagenProducto(String imagenProducto) {
-		this.imagenProducto = imagenProducto;
 	}
 
 	public double getPrecioCostoProducto() {
@@ -130,14 +130,15 @@ public class Producto {
 		this.proveedor = proveedor;
 	}
 
-	@Override
-	public String toString() {
-		return "Producto [idProducto=" + idProducto + ", nombreProducto=" + nombreProducto + ", descripcionProducto="
-				+ descripcionProducto + ", imagenProducto=" + imagenProducto + ", precioCostoProducto="
-				+ precioCostoProducto + ", precioVentaProducto=" + precioVentaProducto + ", stockProducto="
-				+ stockProducto + ", usuario=" + usuario + ", categoria=" + categoria + ", proveedor=" + proveedor
-				+ "]";
+	public List<Imagen> getImagenesProducto() {
+		return imagenesProducto;
 	}
+
+	public void setImagenesProducto(List<Imagen> imagenesProducto) {
+		this.imagenesProducto = imagenesProducto;
+	}
+
+	
 		
 	
 }

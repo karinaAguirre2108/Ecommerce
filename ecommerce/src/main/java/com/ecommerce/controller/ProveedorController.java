@@ -36,7 +36,7 @@ public class ProveedorController {
 	@PostMapping("/guardar")
 	public String guardar(Proveedor proveedor, RedirectAttributes attribute){
 		proveedorService.save(proveedor);
-		attribute.addFlashAttribute("success", "Datos guardados con éxito!");
+		attribute.addFlashAttribute("guardar", "Datos guardados con éxito!");
 		return "redirect:/proveedor";
 	}
 	

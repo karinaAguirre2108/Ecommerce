@@ -21,11 +21,14 @@
 				</div>
 				
 				<div class="card-body colorTabla">
-				<form th:action="@{/producto/guardar}" method="post" >
+				<form th:action="@{/producto/guardar}" method="post" enctype="multipart/form-data">
 					<input type="hidden"/>
 					
 						<div class="row">
-							<div class="col-12 my-2 bg-info"> IMAGEN</div>	
+							<div class="col-12 my-2 "> 
+							<label>Imagenes:</label>
+							<input type="file" name="imagenes" multiple >
+							</div>	
 						</div>
 						
 						<div class="row">
