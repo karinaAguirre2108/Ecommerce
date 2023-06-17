@@ -2,6 +2,9 @@ package com.ecommerce.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,8 +39,6 @@ public class ProductoController {
 	@GetMapping("")
 	public String listar(Model model) {
 		model.addAttribute("producto",productoService.getAllProducto());
-	//	model.addAttribute("categoria",categoriaService.getAllCategoria());
-	//	model.addAttribute("proveedor", proveedorService.getAllProveedor());
 		return "producto/listar";
 	}
 	
@@ -48,19 +49,33 @@ public class ProductoController {
 		return "producto/registrar";
 	}
 	
+	
 	@PostMapping("/guardar")
-	public String guardar(Producto producto,@RequestParam("imagenes")List<MultipartFile>imagenes,RedirectAttributes attribute) throws IOException{
+	public String guardar(Producto producto,@RequestParam("imagenes")List<MultipartFile>imagenes,RedirectAttributes attribute){
 		
-		for (MultipartFile imagenMultipartFile : imagenes) {
-			Imagen newImagen = new Imagen();
-			newImagen.setArchivoImagen(imagenMultipartFile.getOriginalFilename());
-			newImagen.setProducto(producto);
-			producto.getImagenesProducto().add(newImagen);
-		}		
+		if (!imagenes.isEmpty()) {  
+            String rutaAbsoluta = "D://Ecommerce//imagenesProducto";
+
+            for (MultipartFile imagen : imagenes) {
+                try {
+                    byte[] bytesImagen = imagen.getBytes();
+                    Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagen.getOriginalFilename());
+                    Files.write(rutaCompleta, bytesImagen);
+                    Imagen nuevaImagen = new Imagen();
+                    nuevaImagen.setArchivoImagen(imagen.getOriginalFilename());
+                    nuevaImagen.setProducto(producto);
+                    producto.getImagenesProducto().add(nuevaImagen);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }	
 		productoService.save(producto);
 		attribute.addFlashAttribute("guardar", "Datos guardados con éxito!");
-		return "redirect:/producto";
+		return "redirect:/producto";  
 	}
+	
+	
 	
 	@GetMapping("/eliminar/{idProducto}")
 	public String eliminar(@PathVariable Integer idProducto, RedirectAttributes attribute) {

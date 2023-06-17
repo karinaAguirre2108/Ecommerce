@@ -3,6 +3,8 @@ package com.ecommerce.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,7 +42,6 @@ public class Producto {
 	public Producto() {
         this.imagenesProducto = new ArrayList<>();
     }
-	
 
 	public Producto(Integer idProducto, String nombreProducto, String descripcionProducto, double precioCostoProducto,
 			double precioVentaProducto, int stockProducto, Usuario usuario, Categoria categoria, Proveedor proveedor,
@@ -137,8 +138,5 @@ public class Producto {
 	public void setImagenesProducto(List<Imagen> imagenesProducto) {
 		this.imagenesProducto = imagenesProducto;
 	}
-
-	
 		
-	
 }
