@@ -53,7 +53,7 @@ public class ProductoController {
 	@PostMapping("/guardar")
 	public String guardar(Producto producto,@RequestParam("imagenes")List<MultipartFile>imagenes,RedirectAttributes attribute){
 		
-		if (!imagenes.isEmpty()) {  
+		if (!imagenes.isEmpty()) {
             String rutaAbsoluta = "D://Ecommerce//imagenesProducto";
 
             for (MultipartFile imagen : imagenes) {

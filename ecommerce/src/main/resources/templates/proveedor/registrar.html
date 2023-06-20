@@ -1,126 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head th:replace= "administrador/template_admin :: cabecera">
+<head th:replace="administrador/template_admin :: cabecera">
 </head>
 
 <body>
 	<div class="container">
 		<div class="row">
-			<nav class="fixed-top" th:replace= "administrador/template_admin :: navegador">				
-			</nav>
-						
+			<nav class="fixed-top"
+				th:replace="administrador/template_admin :: navegador"></nav>
+
 		</div>
-		
+
 		<div th:replace="administrador/template_admin :: mensajes"></div>
-		
-		<div class="row">
-			<div class="card w-100 mb-5" style="margin: auto auto;">
-				<div class="card-header  letraCabeceraCard">
-					Registrar Proveedor
-				</div>
-				
-				<div class="card-body colorTabla">
-				<form th:action="@{/proveedor/guardar}" method="post" >
-					<input type="hidden"/>
-					
-						<div class="row">
-							<div class="input-group col-lg-6 col-md-6 col-sm-12  my-2">
-								<div class="input-group-prepend">
-									<span class="input-group-text text-dark border border-secondary ">
-										<i class="fas fa-user-tie"></i></span>
-								</div>
-								<input type="text" class="form-control border border-secondary" placeholder="Ingrese Razon Social" name="razonSocialProveedor" 
-								               required />
+
+
+		<div class="card my-3">
+			<div class="card-header  letraCabeceraCard">Registrar Proveedor
+			</div>
+
+			<div class="card-body colorTabla">
+				<form th:action="@{/proveedor/guardar}" method="post">
+					<input type="hidden" />
+
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-12 ">
+							<div class="input-group  my-2">
+								<span
+									class="input-group-text text-dark border border-secondary ">
+									<i class="fas fa-user-tie"></i>
+								</span> <input type="text" class="form-control border border-secondary"
+									placeholder="Ingrese Razon Social" name="razonSocialProveedor"
+									required />
 								<div class="invalid-feedback">Campo obligatorio</div>
 							</div>
-							
-							<div class="input-group col-lg-6 col-md-6 col-sm-12 my-2">
-								<div class="input-group-prepend">
-									<span class="input-group-text text-dark border border-secondary ">
-										<i class="fas fa-building"></i></span>
-								</div>
-								<input type="text" class="form-control border border-secondary" placeholder="Ingrese RUC" 
-										pattern="[1-2][0][0-9]{9}" name="rucProveedor"  required />
-								<div class="invalid-feedback">Campo obligatorio</div>
-							</div>				
 						</div>
-						
-						<div class="row ">
-							<div class="input-group col-lg-6 col-md-6 col-sm-12 my-2">
-								<div class="input-group-prepend">
-									<span class="input-group-text text-dark border border-secondary ">
-										<i class="fas fa-tag"></i></span>
-								</div>
-								<input type="text" class="form-control border border-secondary" placeholder="Ingrese Marca" name="marcaProveedor" 
-								               required />
+
+						<div class="col-lg-6 col-md-6 col-12 ">
+							<div class="input-group  my-2">
+								<span
+									class="input-group-text text-dark border border-secondary ">
+									<i class="fas fa-building"></i>
+								</span> <input type="text" class="form-control border border-secondary"
+									placeholder="Ingrese RUC" pattern="[1-2][0][0-9]{9}"
+									name="rucProveedor" required />
 								<div class="invalid-feedback">Campo obligatorio</div>
 							</div>
-							
-							<div class="input-group col-lg-6 col-md-6 col-sm-12 my-2">
-								<div class="input-group-prepend">
-									<span class="input-group-text text-dark border border-secondary ">
-										<i class="fas fa-map-marker-alt"></i></span>
-								</div>
-								<input type="text" class="form-control border border-secondary" placeholder="Ingrese Dirección" 
-									    name="direccionProveedor"  required />
-								<div class="invalid-feedback">Campo obligatorio</div>
-							</div>				
 						</div>
-						
-						<div class="row">
-							<div class="input-group col-lg-6 col-md-6 col-sm-12 my-2">
-								<div class="input-group-prepend">
-									<span class="input-group-text text-dark border border-secondary ">
-										<i class="fas fa-phone-alt"></i></span>
-								</div>
-								<input type="text" class="form-control border border-secondary" placeholder="Ingrese Teléfono" 
-										pattern="[0-9]{7,11}" name="telefonoProveedor"  required />
+
+					</div>
+
+					<div class="row ">
+						<div class="col-lg-6 col-md-6 col-12 ">
+							<div class="input-group  my-2">
+								<span
+									class="input-group-text text-dark border border-secondary ">
+									<i class="fas fa-tag"></i>
+								</span> <input type="text" class="form-control border border-secondary"
+									placeholder="Ingrese Marca" name="marcaProveedor" required />
 								<div class="invalid-feedback">Campo obligatorio</div>
 							</div>
-							
-							<div class="input-group col-lg-6 col-md-6 col-sm-12 my-2">
-								<div class="input-group-prepend">
-									<span class="input-group-text text-dark border border-secondary ">
-										<i class="fas fa-envelope"></i></span>
-								</div>
-								<input type="email" class="form-control border border-secondary" placeholder="Ingrese Correo" 
-									   name="correoProveedor"  required />
-								<div class="invalid-feedback">Campo obligatorio</div>
-							</div>				
+
 						</div>
-						 
-						<div class=" d-grid gap-2 text-center mt-4 letraBoton">
-							<button type="reset" class="col-lg-3 col-md-4 col-sm-12 col-12 btn btn-secondary mb-3">
+
+						<div class="col-lg-6 col-md-6 col-12 ">
+							<div class="input-group my-2">
+								<span
+									class="input-group-text text-dark border border-secondary ">
+									<i class="fas fa-map-marker-alt"></i>
+								</span> <input type="text" class="form-control border border-secondary"
+									placeholder="Ingrese Dirección" name="direccionProveedor"
+									required />
+								<div class="invalid-feedback">Campo obligatorio</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="row">
+
+						<div class="col-lg-6 col-md-6 col-12 ">
+							<div class="input-group my-2">
+								<span
+									class="input-group-text text-dark border border-secondary ">
+									<i class="fas fa-phone-alt"></i>
+								</span> <input type="text" class="form-control border border-secondary"
+									placeholder="Ingrese Teléfono" pattern="[0-9]{7,11}"
+									name="telefonoProveedor" required />
+								<div class="invalid-feedback">Campo obligatorio</div>
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-12 ">
+							<div class="input-group  my-2">
+								<span
+									class="input-group-text text-dark border border-secondary ">
+									<i class="fas fa-envelope"></i>
+								</span> <input type="email"
+									class="form-control border border-secondary"
+									placeholder="Ingrese Correo" name="correoProveedor" required />
+								<div class="invalid-feedback">Campo obligatorio</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row letraBoton">
+						<div
+							class="d-grid gap-1 d-md-flex justify-content-md-center mt-3 ">
+
+							<button type="reset" class="col-md-3 btn btn-secondary mt-2">
 								<i class="fas fa-eraser"></i> Limpiar
-							</button>						
-							<a  class="col-lg-3 col-md-4 col-sm-12 col-12 btn btn-danger  mb-3 "  th:href="@{/proveedor}">
+							</button>
+
+							<a class="col-md-3 btn btn-danger mt-2" th:href="@{/proveedor}">
 								<i class="fas fa-ban"></i> Cancelar
 							</a>
-							<button type="submit" class="col-lg-3 col-md-4 col-sm-12 col-12 btn btn-primary  mb-3">
-								<i class="far fa-save"></i> Registrar Proveedor
-							</button>	
-							
-										
-						</div>
-						
-					
-				</form>
-				
-				
-				</div>
-			</div>	 
-		</div>
-		
-		
-	</div>
-	
-	<footer class="sticky-footer " th:replace= "administrador/template_admin :: footer">
-    </footer>
-   
 
-    <!-- Bootstrap core JavaScript -->
-  	
+							<button type="submit" class=" btn btn-primary col-md-3 mt-2">
+								<i class="far fa-save"></i> Registrar Proveedor
+							</button>
+
+						</div>
+					</div>
+
+
+
+				</form>
+
+
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<footer class="sticky-footer "
+		th:replace="administrador/template_admin :: footer"> </footer>
+
+
+	<!-- Bootstrap core JavaScript -->
+
 	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 	<script th:src="@{/js/scripts.js}"></script>
 	<script th:src="@{/js/jquery.min.js}"></script>

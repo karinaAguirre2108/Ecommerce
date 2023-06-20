@@ -25,3 +25,34 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+
+$(document).ready(function() {
+  // Obtener el campo de entrada de archivos
+  var fileInput = $('input[type="file"][name="imagenes"]');
+
+  // Escuchar el evento de cambio del campo de entrada de archivos
+  fileInput.change(function() {
+    var previewContainer = $('#image-preview-container');
+    previewContainer.empty(); // Limpiar las vistas previas anteriores
+
+    // Obtener los archivos seleccionados
+    var files = $(this)[0].files;
+
+    // Recorrer los archivos y generar las vistas previas
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+      var reader = new FileReader();
+
+      // Leer el archivo como una URL de datos
+      reader.readAsDataURL(file);
+
+      // Escuchar el evento de carga del archivo
+      reader.onload = function(event) {
+        var imageSource = event.target.result;
+        var imageElement = $('<img>').attr('src', imageSource);
+        previewContainer.append(imageElement); // Agregar la vista previa al contenedor
+      };
+    }
+  });
+});
+

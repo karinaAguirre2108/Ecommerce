@@ -1,83 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head th:replace= "administrador/template_admin :: cabecera">
+<head th:replace="administrador/template_admin :: cabecera">
 </head>
 
 <body>
 	<div class="container">
 		<div class="row">
-			<nav class="fixed-top" th:replace= "administrador/template_admin :: navegador">				
-			</nav>
-						
+			<nav class="fixed-top"
+				th:replace="administrador/template_admin :: navegador"></nav>
+
 		</div>
 		<div th:replace="administrador/template_admin :: mensajes"></div>
-				
-		<div class="row">			
-				<a class=" btn btn-primary mb-3"  th:href= "@{/proveedor/registrar}" >
-    			<i class="far fa-save"></i> REGISTRAR NUEVO PROVEEDOR</a>						
+
+
+		<a class="col-12 btn btn-primary mb-3 letraBoton"
+			th:href="@{/proveedor/registrar}"> <i class="far fa-save"></i>
+			REGISTRAR NUEVO PROVEEDOR
+		</a>
+
+		<div class="card">
+			<div class="card-header cabeceraCard letraCabeceraCard">LISTA
+				DE PROVEEDORES</div>
+			<div class="card-body table-responsive">
+				<table class="table text-dark table-hover">
+					<thead>
+						<tr class="trper">
+							<th>Id</th>
+							<th>Razon Social</th>
+							<th>RUC</th>
+							<th>Marca</th>
+							<th>Teléfono</th>
+							<th>Dirección</th>
+							<th>Correo</th>
+							<th class="text-center">Editar</th>
+							<th class="text-center">Eliminar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="proveedor:${proveedor}">
+							<td th:text="${proveedor.idProveedor}"></td>
+							<td th:text="${proveedor.razonSocialProveedor}"></td>
+							<td th:text="${proveedor.rucProveedor}"></td>
+							<td th:text="${proveedor.marcaProveedor}"></td>
+							<td th:text="${proveedor.telefonoProveedor}"></td>
+							<td th:text="${proveedor.direccionProveedor}"></td>
+							<td th:text="${proveedor.correoProveedor}"></td>
+							<td class="text-center"><a
+								th:href="@{proveedor/editar/{idProveedor} (idProveedor=${proveedor.idProveedor})}"
+								class="btn btn-warning letraBoton"> <i class="fas fa-edit"></i>
+							</a></td>
+							<td class="text-center"><a
+								th:href="@{proveedor/eliminar/{idProveedor} (idProveedor=${proveedor.idProveedor})}"
+								th:attr="onclick='return confirm(&quot;¿Está seguro de que desea eliminar el proveedor ' + ${proveedor.marcaProveedor} + '?&quot;)'"
+								class="btn btn-danger letraBoton"> <i
+									class="fas fa-trash-alt"></i>
+							</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		
-		<div class="row">		    
-			<div class="card w-100 " style="margin: auto auto;">
-	        	<div class="card-header cabeceraCard letraCabeceraCard">
-	            	LISTA DE PROVEEDORES
-	                 </div>
-	                 <div class="card-body table-responsive">
-	                 	<table class="table text-dark table-hover">
-	                 		<thead>
-	                 			<tr class="trper">
-							      <th >Id</th>
-							      <th >Razon Social</th>
-							      <th >RUC</th>
-							      <th >Marca</th>
-							      <th >Teléfono</th>
-							      <th >Dirección</th>
-							      <th >Correo</th>
-							      <th class="text-center">Editar</th>
-							      <th class="text-center">Eliminar</th>
-							    </tr>
-							 </thead>
-							 <tbody>
-							 	<tr th:each="proveedor:${proveedor}">
-							      <td th:text="${proveedor.idProveedor}"> </td>
-							      <td th:text="${proveedor.razonSocialProveedor}"> </td>
-							      <td th:text="${proveedor.rucProveedor}"> </td>
-							      <td th:text="${proveedor.marcaProveedor}"> </td>
-							      <td th:text="${proveedor.telefonoProveedor}"> </td>
-							      <td th:text="${proveedor.direccionProveedor}"> </td>
-							      <td th:text="${proveedor.correoProveedor}"> </td>
-							      <td class="text-center"> 
-							      	   <a th:href="@{proveedor/editar/{idProveedor} (idProveedor=${proveedor.idProveedor})}" class="btn btn-warning" >
-							      	         <i class="fas fa-edit"></i>
-									   </a> 
-								  </td>
-							      <td class="text-center"> 
-							      	   <a th:href="@{proveedor/eliminar/{idProveedor} (idProveedor=${proveedor.idProveedor})}" 
-							      	   th:attr="onclick='return confirm(&quot;¿Está seguro de que desea eliminar el proveedor ' + ${proveedor.marcaProveedor} + '?&quot;)'" class="btn btn-danger">
-							      			<i class="fas fa-trash-alt"></i>
-									   </a>
-								  </td>
-							    </tr>
-							</tbody>
-						</table>
-	                </div>
-	            </div>
-	        </div>
-		
+
+
 
 	</div>
-    <footer class="sticky-footer " th:replace= "administrador/template_admin :: footer">
-    </footer>
-   
+	<footer th:replace="administrador/template_admin :: footer"> </footer>
 
-<!-- Bootstrap core JavaScript -->
-  	<script th:src="@{/js/jquery.min.js}"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/js/jquery.min.js}"></script>
 	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 	<script th:src="@{/js/scripts.js}"></script>
 
-  </body>
-  
-  
+</body>
 
-  </html>
+
+
+</html>

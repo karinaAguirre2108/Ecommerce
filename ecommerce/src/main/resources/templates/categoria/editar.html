@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head th:replace= "administrador/template_admin :: cabecera">
+<head th:replace="administrador/template_admin :: cabecera">
 </head>
 
 <body>
 	<div class="container">
 		<div class="row">
-			<nav class="fixed-top" th:replace= "administrador/template_admin :: navegador">				
-			</nav>
-				
+			<nav class="fixed-top"
+				th:replace="administrador/template_admin :: navegador"></nav>
+
 		</div>
-		
-		<div th:replace="administrador/template_admin :: mensajes"></div>	
-		
-		<div class="row">
-			<div class="card w-100 p-4 mb-5" style="margin: auto auto;">
-				<div class="card-header  letraCabeceraCard">
-					Editar Categoria
-				</div>
-				
-				<div class="card-body colorTabla">
+
+		<div th:replace="administrador/template_admin :: mensajes"></div>
+
+
+		<div class="card my-3">
+			<div class="card-header  letraCabeceraCard">Editar Categoria</div>
+
+			<div class="card-body colorTabla">
 				<form method="post" th:action="@{/categoria/actualizar}">
-					<input type="hidden" name="idCategoria" th:value="${categoria.idCategoria}"/>
-					
-						<div class="row">
-							<div class="input-group col-12 mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text text-dark border border-secondary ">
-										<i class="fas fa-edit mr-2"></i> NOMBRE</span>
-								</div>
-								<input type="text" class="form-control border border-secondary " name="nombreCategoria" th:value="${categoria.nombreCategoria}"
-								               required />
-								<div class="invalid-feedback">Campo obligatorio</div>
-							</div>
-				
+					<input type="hidden" name="idCategoria"
+						th:value="${categoria.idCategoria}" />
+
+					<div class="row">
+						<div class="input-group col-12 my-3">
+
+							<span class="input-group-text text-dark border border-secondary ">
+								<i class="fas fa-edit mr-2"></i> NOMBRE
+							</span> <input type="text" class="form-control border border-secondary "
+								name="nombreCategoria" th:value="${categoria.nombreCategoria}"
+								required />
+							<div class="invalid-feedback">Campo obligatorio</div>
 						</div>
-						 
-						<div class=" d-grid gap-2 text-center mt-4 letraBoton">
-					
-							<a  class="col-lg-3 col-md-4 col-sm-12 col-12 btn btn-danger  mb-3 "  th:href="@{/categoria}">
+
+					</div>
+
+					<div class="row letraBoton">
+						<div
+							class="d-grid gap-2 d-md-flex justify-content-md-center mt-3 ">
+
+							<a class="col-md-4 btn btn-danger mt-2" th:href="@{/categoria}">
 								<i class="fas fa-ban"></i> Cancelar
 							</a>
-							<button type="submit" class="col-lg-3 col-md-4 col-sm-12 col-12 btn btn-warning mb-3">
-								<i class="far fa-save"></i> Guardar Cambios
-							</button>	
-							
-										
-						</div>
-						
-					
-				</form>
-				
-				
-				</div>
-			</div>	 
-		</div>
-		
-		
-	</div>
-	
-	<footer class="sticky-footer fixed-bottom">
-      <div class="container">
-        <p class="m-0 text-center">Copyright &copy; La Nono 2024</p>
-      </div>
-      <!-- /.container -->
-    </footer>
 
-    <!-- Bootstrap core JavaScript -->
-  	
+							<button type="submit" class=" btn btn-warning  col-md-4 mt-2">
+								<i class="far fa-save "></i> Guardar Cambios
+							</button>
+
+						</div>
+					</div>
+
+
+				</form>
+
+
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<footer class="sticky-footer fixed-bottom">
+		<div class="container">
+			<p class="m-0 text-center">Copyright &copy; La Nono 2024</p>
+		</div>
+		<!-- /.container -->
+	</footer>
+
+	<!-- Bootstrap core JavaScript -->
+
 	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 	<script th:src="@{/js/scripts.js}"></script>
 	<script th:src="@{/js/jquery.min.js}"></script>

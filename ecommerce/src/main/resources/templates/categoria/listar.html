@@ -1,74 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head th:replace= "administrador/template_admin :: cabecera">
+<head th:replace="administrador/template_admin :: cabecera">
 </head>
 
 <body>
 	<div class="container">
 		<div class="row">
-			<nav class="fixed-top" th:replace= "administrador/template_admin :: navegador">				
-			</nav>	
-			
+			<nav class="fixed-top"
+				th:replace="administrador/template_admin :: navegador"></nav>
+
 		</div>
-		
-		<div th:replace="administrador/template_admin :: mensajes"></div>	
-				
-		<div class="row">			
-				<a class=" btn btn-primary mb-3"  th:href= "@{/categoria/registrar}" >
-    			<i class="far fa-save"></i> REGISTRAR NUEVA CATEGORIA</a>						
+
+		<div th:replace="administrador/template_admin :: mensajes"></div>
+
+
+		<a class="col-12 btn btn-primary mb-3 letraBoton"
+			th:href="@{/categoria/registrar}"> <i class="far fa-save"></i>
+			REGISTRAR NUEVA CATEGORIA
+		</a>
+
+		<div class="card">
+			<div class="card-header cabeceraCard letraCabeceraCard">LISTA
+				DE CATEGORIAS</div>
+			<div class="card-body table-responsive">
+				<table class="table text-dark table-hover">
+					<thead>
+						<tr class="trper">
+							<th>Id</th>
+							<th class="w-50">Nombre</th>
+							<th class="text-center">Editar</th>
+							<th class="text-center">Eliminar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="categoria:${categoria}">
+							<td th:text="${categoria.idCategoria}"></td>
+							<td th:text="${categoria.nombreCategoria}"></td>
+							<td class="text-center"><a
+								th:href="@{categoria/editar/{idCategoria} (idCategoria=${categoria.idCategoria})}"
+								class="btn btn-warning"> <i class="fas fa-edit"></i><span
+									class="d-none d-lg-inline letraBoton"> Editar</span>
+							</a></td>
+							<td class="text-center"><a
+								th:href="@{categoria/eliminar/{idCategoria} (idCategoria=${categoria.idCategoria})}"
+								th:attr="onclick='return confirm(&quot;¿Está seguro de que desea eliminar la categoría ' + ${categoria.nombreCategoria} + '?&quot;)'"
+								class="btn btn-danger"> <i class="fas fa-trash-alt"></i><span
+									class="d-none d-lg-inline letraBoton"> Eliminar</span>
+							</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		
-		<div class="row">		    
-			<div class="card w-100 " style="margin: auto auto;">
-	        	<div class="card-header cabeceraCard letraCabeceraCard">
-	            	LISTA DE CATEGORIAS
-	                 </div>
-	                 <div class="card-body table-responsive">
-	                 	<table class="table text-dark table-hover">
-	                 		<thead>
-	                 			<tr class="trper">
-							      <th >Id</th>
-							      <th class="w-50">Nombre</th>
-							      <th class="text-center">Editar</th>
-							      <th class="text-center">Eliminar</th>
-							    </tr>
-							 </thead>
-							 <tbody>
-							 	<tr th:each="categoria:${categoria}">
-							      <td th:text="${categoria.idCategoria}"> </td>
-							      <td th:text="${categoria.nombreCategoria}"> </td>
-							      <td class="text-center"> 
-							      	   <a th:href="@{categoria/editar/{idCategoria} (idCategoria=${categoria.idCategoria})}" class="btn btn-warning" >
-							      	         <i class="fas fa-edit"></i><span class="d-none d-lg-inline"> Editar</span>
-									   </a> 
-								  </td>
-							      <td class="text-center"> 
-							      	   <a th:href="@{categoria/eliminar/{idCategoria} (idCategoria=${categoria.idCategoria})}" 
-							      	   th:attr="onclick='return confirm(&quot;¿Está seguro de que desea eliminar la categoría ' + ${categoria.nombreCategoria} + '?&quot;)'" class="btn btn-danger">
-							      			<i class="fas fa-trash-alt"></i><span class="d-none d-lg-inline"> Eliminar</span>
-									   </a>
-								  </td>
-							    </tr>
-							</tbody>
-						</table>
-	                </div>
-	            </div>
-	        </div>
-		
+
+
 
 	</div>
-    <footer class="sticky-footer " th:replace= "administrador/template_admin :: footer">
-    </footer>
-   
+	<footer class="sticky-footer "
+		th:replace="administrador/template_admin :: footer"> </footer>
 
-<!-- Bootstrap core JavaScript -->
-  	<script th:src="@{/js/jquery.min.js}"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/js/jquery.min.js}"></script>
 	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 	<script th:src="@{/js/scripts.js}"></script>
 
-  </body>
-  
-  
+</body>
 
-  </html>
+
+
+</html>

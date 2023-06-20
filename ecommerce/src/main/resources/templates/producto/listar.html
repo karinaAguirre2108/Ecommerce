@@ -1,86 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head th:replace= "administrador/template_admin :: cabecera">
+<head th:replace="administrador/template_admin :: cabecera">
 </head>
 
 <body>
 	<div class="container">
 		<div class="row">
-			<nav class="fixed-top" th:replace= "administrador/template_admin :: navegador">				
-			</nav>
-				
+			<nav class="fixed-top"
+				th:replace="administrador/template_admin :: navegador"></nav>
+
 		</div>
-		
-		<div th:replace="administrador/template_admin :: mensajes"></div>	
-				
-		<div class="row">			
-				<a class=" btn btn-primary mb-3"  th:href= "@{/producto/registrar}" >
-    			<i class="far fa-save"></i> REGISTRAR NUEVO PRODUCTO</a>						
+
+		<div th:replace="administrador/template_admin :: mensajes"></div>
+
+
+		<a class="col-12 btn btn-primary mb-3 letraBoton"
+			th:href="@{/producto/registrar}"> <i class="far fa-save"></i>
+			REGISTRAR NUEVO PRODUCTO
+		</a>
+
+		<div class="card">
+			<div class="card-header cabeceraCard letraCabeceraCard">LISTA
+				DE PRODUCTOS</div>
+			<div class="card-body table-responsive">
+				<table class="table text-dark table-hover">
+					<thead>
+						<tr class="trper">
+							<th>Id</th>
+							<th>Nombre</th>
+							<th>Categoría</th>
+							<th>Descripción</th>
+							<th>P.Costo S/.</th>
+							<th>P.Venta S/.</th>
+							<th>Stock</th>
+							<th>Marca</th>
+							<th class="text-center">Editar</th>
+							<th class="text-center">Eliminar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="producto:${producto}">
+							<td th:text="${producto.idProducto}"></td>
+							<td th:text="${producto.nombreProducto}"></td>
+							<td th:text="${producto.categoria.nombreCategoria}"></td>
+							<td th:text="${producto.descripcionProducto}"></td>
+							<td th:text="${producto.precioCostoProducto}"></td>
+							<td th:text="${producto.precioVentaProducto}"></td>
+							<td th:text="${producto.stockProducto}"></td>
+							<td th:text="${producto.proveedor.marcaProveedor}"></td>
+							<td class="text-center letraBoton"><a href="#"
+								class="btn btn-warning"> <i class="fas fa-edit"></i>
+							</a></td>
+							<td class="text-center"><a
+								th:href="@{producto/eliminar/{idProducto} (idProducto=${producto.idProducto})}"
+								th:attr="onclick='return confirm(&quot;¿Está seguro de que desea eliminar el producto ' + ${producto.nombreProducto} + '?&quot;)'"
+								class="btn btn-danger letraBoton"> <i
+									class="fas fa-trash-alt"></i>
+							</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		
-		<div class="row">		    
-			<div class="card w-100 " style="margin: auto auto;">
-	        	<div class="card-header cabeceraCard letraCabeceraCard">
-	            	LISTA DE PRODUCTOS
-	                 </div>
-	                 <div class="card-body table-responsive">
-	                 	<table class="table text-dark table-hover">
-	                 		<thead>
-	                 			<tr class="trper">
-							      <th >Id</th>
-							      <th >Nombre</th>
-							      <th >Categoría</th>
-							      <th >Descripción</th>
-							      <th >P. Costo S/.</th>
-							      <th >P. Venta S/.</th>
-							      <th >Stock</th>
-							      <th >Marca</th>
-							      <th class="text-center">Editar</th>
-							      <th class="text-center">Eliminar</th>
-							    </tr>
-							 </thead>
-							 <tbody>
-							 	<tr th:each="producto:${producto}">
-							      <td th:text="${producto.idProducto}"> </td>
-							      <td th:text="${producto.nombreProducto}"> </td>
-								  <td th:text="${producto.categoria.nombreCategoria}"> </td>
-							      <td th:text="${producto.descripcionProducto}"> </td>
-							      <td th:text="${producto.precioCostoProducto}"> </td>
-							      <td th:text="${producto.precioVentaProducto}"> </td>
-							      <td th:text="${producto.stockProducto}"> </td>
-							      <td th:text="${producto.proveedor.marcaProveedor}"> </td>
-							      <td class="text-center"> 
-							      	   <a href="#" class="btn btn-warning" >
-							      	         <i class="fas fa-edit"></i>
-									   </a> 
-								  </td>
-							      <td class="text-center"> 
-							      	   <a th:href="@{producto/eliminar/{idProducto} (idProducto=${producto.idProducto})}" 
-							      	   th:attr="onclick='return confirm(&quot;¿Está seguro de que desea eliminar el producto ' + ${producto.nombreProducto} + '?&quot;)'" class="btn btn-danger">
-							      			<i class="fas fa-trash-alt"></i>
-									   </a>
-								  </td>
-							    </tr>
-							</tbody>
-						</table>
-	                </div>
-	            </div>
-	        </div>
-		
+
+
 
 	</div>
-    <footer class="sticky-footer " th:replace= "administrador/template_admin :: footer">
-    </footer>
-   
+	<footer class="sticky-footer "
+		th:replace="administrador/template_admin :: footer"> </footer>
 
-<!-- Bootstrap core JavaScript -->
-  	<script th:src="@{/js/jquery.min.js}"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/js/jquery.min.js}"></script>
 	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 	<script th:src="@{/js/scripts.js}"></script>
 
-  </body>
-  
-  
+</body>
 
-  </html>
+
+
+</html>
