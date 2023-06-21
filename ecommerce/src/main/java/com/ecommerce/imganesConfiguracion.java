@@ -11,7 +11,7 @@ public class imganesConfiguracion implements WebMvcConfigurer {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		WebMvcConfigurer.super.addResourceHandlers(registry);
 		
-		registry.addResourceHandler("/imagenesProducto/**").addResourceLocations("file:/D:/Ecommerce/imagenesProducto");
+		registry.addResourceHandler("/imagenesProducto/**").addResourceLocations("file:/D:/Ecommerce/imagenesProducto/");
 	}
 	
 	

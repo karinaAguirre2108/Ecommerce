@@ -15,30 +15,31 @@
 		<div th:replace="administrador/template_admin :: mensajes"></div>
 
 		<div class="card my-3">
-			<div class="card-header  letraCabeceraCard">Registrar Producto
-			</div>
+			<div class="card-header  letraCabeceraCard">Editar Producto</div>
 
 			<div class="card-body colorTabla">
-				<form th:action="@{/producto/guardar}" method="post"
+				<form th:action="@{/producto/actualizar}" method="post"
 					enctype="multipart/form-data">
-					<input type="hidden" />
+					<input type="hidden" name="idProducto"
+						th:value="${producto.idProducto}" />
 
-					<div class="row">
-						<div class="col12">
-							<div class="input-group my-2">
-								<span
-									class="input-group-text text-dark border border-secondary ">
-									<i class="far fa-images"></i>
-								</span> <input type="file" class="form-control border border-secondary"
-									multiple name="imagenes" />
-							</div>
-
-						</div>
-
-					</div>
 					
+
+					<div>
+						<h3>Imágenes:</h3>
+						<ul>
+							<li th:each="imagen : ${imagenes}"><img
+								th:src="@{'/imagenesProducto/' + ${imagen.archivoImagen}}"
+								width="200" height="200" /></li>
+						</ul>
+					</div>
+
 					<div class="row">
-						<div id="image-preview-container" class="image-preview-container text-center"></div>
+						<div class="col-12">
+							<div class="input-group my-2">
+								<input type="file"  multiple name="nuevasImagenes" id="nuevasImagenes"/>
+							</div>
+						</div>
 					</div>
 
 					<div class="row">
@@ -53,7 +54,8 @@
 											<i class="fas fa-file-signature"></i>
 										</span> <input type="text"
 											class="form-control border border-secondary"
-											placeholder="Ingrese Nombre" name="nombreProducto" required />
+											placeholder="Ingrese Nombre" name="nombreProducto"
+											th:value="${producto.nombreProducto}" required />
 										<div class="invalid-feedback">Campo obligatorio</div>
 									</div>
 
@@ -69,7 +71,8 @@
 											<option value="">Seleccione Categoría</option>
 											<option th:each="categoria:${categoria}"
 												th:value="${categoria.idCategoria}"
-												th:text="${categoria.nombreCategoria}"></option>
+												th:text="${categoria.nombreCategoria}"
+												th:selected="${categoria.idCategoria == producto.categoria.idCategoria}"></option>
 										</select>
 										<div class="invalid-feedback">Campo obligatorio</div>
 									</div>
@@ -86,7 +89,7 @@
 
 								<textarea class="form-control border border-secondary" rows="3"
 									placeholder="Ingrese Descripción" name="descripcionProducto"
-									required></textarea>
+									th:text="${producto.descripcionProducto}" required></textarea>
 								<div class="invalid-feedback">Campo obligatorio</div>
 							</div>
 
@@ -104,7 +107,8 @@
 									<option value="">Seleccione Marca</option>
 									<option th:each="proveedor:${proveedor}"
 										th:value="${proveedor.idProveedor}"
-										th:text="${proveedor.marcaProveedor}"></option>
+										th:text="${proveedor.marcaProveedor}"
+										th:selected="${proveedor.idProveedor == producto.proveedor.idProveedor}"></option>
 								</select>
 								<div class="invalid-feedback">Campo obligatorio</div>
 							</div>
@@ -118,7 +122,7 @@
 								</span> <input type="number"
 									class="form-control border border-secondary"
 									placeholder="Ingrese Stock" name="stockProducto" min="1"
-									max="50" required />
+									max="50" th:value="${producto.stockProducto}" required />
 								<div class="invalid-feedback">Campo obligatorio</div>
 							</div>
 
@@ -133,7 +137,8 @@
 									S/ </span> <input type="text"
 									class="form-control border border-secondary"
 									placeholder="Ingrese Precio Costo" pattern="[1-9][0-9.]{2,10}"
-									name="precioCostoProducto" min="1" max="50" required />
+									name="precioCostoProducto" min="1" max="50"
+									th:value="${producto.precioCostoProducto}" required />
 								<div class="invalid-feedback">Campo obligatorio</div>
 							</div>
 
@@ -145,7 +150,9 @@
 									S/ </span> <input type="text"
 									class="form-control border border-secondary"
 									placeholder="Ingrese Precio Venta" pattern="[1-9][0-9.]{2,10}"
-									name="precioVentaProducto" min="1" max="50" required />
+									name="precioVentaProducto"
+									th:value="${producto.precioVentaProducto}" min="1" max="50"
+									required />
 								<div class="invalid-feedback">Campo obligatorio</div>
 							</div>
 
@@ -156,16 +163,13 @@
 						<div
 							class="d-grid gap-1 d-md-flex justify-content-md-center my-3 ">
 
-							<button type="reset" class="col-md-3 btn btn-secondary mt-2">
-								<i class="fas fa-eraser"></i> Limpiar
-							</button>
 
-							<a class="col-md-3 btn btn-danger mt-2" th:href="@{/producto}">
+							<a class="col-md-4 btn btn-danger mt-2" th:href="@{/producto}">
 								<i class="fas fa-ban"></i> Cancelar
 							</a>
 
-							<button type="submit" class=" btn btn-primary col-md-3 mt-2">
-								<i class="far fa-save"></i> Registrar Producto
+							<button type="submit" class=" btn btn-warning col-md-4 mt-2">
+								<i class="far fa-save"></i> Guardar Cambios
 							</button>
 
 						</div>
