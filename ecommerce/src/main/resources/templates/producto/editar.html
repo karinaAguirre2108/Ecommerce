@@ -19,27 +19,37 @@
 
 			<div class="card-body colorTabla">
 				<form th:action="@{/producto/actualizar}" method="post"
-					enctype="multipart/form-data">
+					enctype="multipart/form-data" >
 					<input type="hidden" name="idProducto"
 						th:value="${producto.idProducto}" />
 
-					
+					<div class="row">
+						<div class="col12">
+							<div class="input-group my-2">
+								<span
+									class="input-group-text text-dark border border-secondary ">
+									<i class="far fa-images"></i>
+								</span> <input type="file" class="form-control border border-secondary"
+									multiple name="nuevasImagenes" />
+							</div>
 
-					<div>
-						<h3>Imágenes:</h3>
-						<ul>
-							<li th:each="imagen : ${imagenes}"><img
-								th:src="@{'/imagenesProducto/' + ${imagen.archivoImagen}}"
-								width="200" height="200" /></li>
-						</ul>
+						</div>
+
 					</div>
 
-					<div class="row">
-						<div class="col-12">
-							<div class="input-group my-2">
-								<input type="file"  multiple name="nuevasImagenes" id="nuevasImagenes"/>
-							</div>
-						</div>
+					<div class="div-img-container my-2">
+						<p class="letraMenuSecundario">Imágenes Existentes:</p>
+						<ul class="ul-img">
+							<li th:each="imagen : ${imagenes}"><img
+								th:src="@{'/imagenesProducto/' + ${imagen.archivoImagen}}"
+								class="img-thumbnail"
+								/></li>
+						</ul>
+					</div>
+					
+					<div class="div-img-container mb-2 mt-3">
+						<p class="letraMenuSecundario">Nuevas Imágenes:</p>
+						<div id="image-preview-container"></div>
 					</div>
 
 					<div class="row">

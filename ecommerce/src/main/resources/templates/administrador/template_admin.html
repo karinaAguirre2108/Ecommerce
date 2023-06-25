@@ -90,22 +90,22 @@
 			
 		</div>
 		<!-- Mensaje -->
-				<div th:fragment="mensajes" class="row">
-					<div class="alert alert-success alert-dismissable col-12"
-						th:if="${guardar!=null}">
-						<label th:text="${guardar}"></label>
-						<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
+				<div th:fragment="mensajes" >
+					<div class="alert alert-success alert-dismissible fade show" role="alert" 
+						th:if="${guardar!=null}"><strong>
+						<label th:text="${guardar}"></label></strong>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
-					<div class="alert alert-warning alert-dismissable col-12"
-						th:if="${editar!=null}">
-						<label th:text="${editar}"></label>
-						<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
+					<div class="alert alert-warning alert-dismissible fade show" role="alert"
+						th:if="${editar!=null}"><strong>
+						<label th:text="${editar}"></label></strong>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
 
-					<div class="alert alert-danger alert-dismissable col-12"
-						th:if="${eliminar!=null}">
-						<label th:text="${eliminar}"></label>
-						<button type="button" class="close" data-bs-dismiss="alert">&times;</button>
+					<div class="alert alert-danger alert-dismissible fade show" role="alert"
+						th:if="${eliminar!=null}"><strong>
+						<label th:text="${eliminar}"></label></strong>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
 				</div>
 		

@@ -156,11 +156,43 @@ footer {
 	height: 100px;
 }
 
-.image-preview-container img {
-  width: 300px;
-  height: 300px;
-  object-fit: contain;
-  border: 2px dashed #9c9c9c;
-  margin: 20px;
-  border-radius: 5px;
+.div-img-container{
+	border: 1px solid rgb(108, 117, 125);
+	border-radius: 0.25rem;
+	border-bottom-right-radius:0;
+	border-top-right-radius:0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	
+}
+
+.ul-img {
+  display: flex;
+  list-style: none;
+  padding:0;
+  padding-bottom:10px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.ul-img li {
+  margin-right: 10px; /* Espacio entre las imágenes */
+}
+
+.ul-img li:last-child {
+  margin-right: 0; /* Eliminar margen derecho del último elemento */
+}
+
+.div-img-container div{
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom:10px;
+}
+.div-img-container div img{
+    margin-right: 10px;
+}
+.div-img-container div img:last-child{
+    margin-right: 0;
 }

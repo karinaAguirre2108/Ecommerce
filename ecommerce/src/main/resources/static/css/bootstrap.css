@@ -598,13 +598,14 @@ progress {
   height: auto;
 }
 
-.img-thumbnail {
+.img-thumbnail {	
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
-  max-width: 100%;
-  height: auto;
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
 }
 
 .figure {
@@ -2194,7 +2195,6 @@ progress {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
