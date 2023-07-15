@@ -19,9 +19,38 @@
 			<div class="card-header  letraCabeceraCard">Editar Categoria</div>
 
 			<div class="card-body colorTabla">
-				<form method="post" th:action="@{/categoria/actualizar}">
+				<form method="post" th:action="@{/categoria/actualizar}" enctype="multipart/form-data">
 					<input type="hidden" name="idCategoria"
 						th:value="${categoria.idCategoria}" />
+						
+					<div class="row">
+						<div class="col12">
+							<div class="input-group my-2">
+								<span
+									class="input-group-text text-dark border border-secondary ">
+									<i class="far fa-images"></i>
+								</span> <input type="file" class="form-control border border-secondary"
+									 name="nuevasImagenes" />
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="div-img-container my-2">
+						<p class="letraMenuSecundario">Imágenes Existentes:</p>
+						
+						<img
+								th:src="@{'/imagenesCategoria/' + ${categoria.imagenCategoria.archivoImagen}}"
+								class="img-thumbnail"
+								/>
+						
+					</div>
+					
+					<div class="div-img-container mb-2 mt-3">
+						<p class="letraMenuSecundario">Nuevas Imágenes:</p>
+						<div id="image-preview-container"></div>
+					</div>
 
 					<div class="row">
 						<div class="input-group col-12 my-3">
@@ -62,7 +91,7 @@
 
 	</div>
 
-	<footer class="sticky-footer fixed-bottom">
+	<footer class="sticky-footer ">
 		<div class="container">
 			<p class="m-0 text-center">Copyright &copy; La Nono 2024</p>
 		</div>
@@ -72,8 +101,8 @@
 	<!-- Bootstrap core JavaScript -->
 
 	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
-	<script th:src="@{/js/scripts.js}"></script>
 	<script th:src="@{/js/jquery.min.js}"></script>
+	<script th:src="@{/js/scripts.js}"></script>
 
 </body>
 

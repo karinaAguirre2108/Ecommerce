@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,16 +19,20 @@ public class Imagen {
 	
 	@ManyToOne
 	private Producto producto;
+	
+	@OneToOne
+	private Categoria categoria;
 
 	public Imagen() {
 		
 	}
 
-	public Imagen(Integer idImagen, String archivoImagen, Producto producto) {
+	public Imagen(Integer idImagen, String archivoImagen, Producto producto, Categoria categoria) {
 		super();
 		this.idImagen = idImagen;
 		this.archivoImagen = archivoImagen;
 		this.producto = producto;
+		this.categoria = categoria;
 	}
 
 	public Integer getIdImagen() {
@@ -53,6 +58,15 @@ public class Imagen {
 	public void setProducto(Producto producto) {
 		this.producto = producto;
 	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
 	
 	
 }

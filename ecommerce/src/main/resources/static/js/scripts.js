@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 //***************************************************************
-// previsualizacion de imagenes - registrar  producto
+// previsualizacion de imagenes - registrar
 
 $(document).ready(function() {
   // Obtener el campo de entrada de archivos
@@ -60,7 +60,7 @@ $(document).ready(function() {
 });
  
 //***************************************************************
-// previsualizacion de nuevas imagenes - editar  producto
+// previsualizacion de nuevas imagenes - editar
 
 $(document).ready(function() {
   // Obtener el campo de entrada de archivos
@@ -91,4 +91,3 @@ $(document).ready(function() {
     }
   });
 });
-

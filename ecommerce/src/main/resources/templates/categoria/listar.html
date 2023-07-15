@@ -28,7 +28,8 @@
 					<thead>
 						<tr class="trper">
 							<th>Id</th>
-							<th class="w-50">Nombre</th>
+							<th class="w-30">Nombre</th>
+							<th class="w-30">Imagen</th>
 							<th class="text-center">Editar</th>
 							<th class="text-center">Eliminar</th>
 						</tr>
@@ -37,6 +38,12 @@
 						<tr th:each="categoria:${categoria}">
 							<td th:text="${categoria.idCategoria}"></td>
 							<td th:text="${categoria.nombreCategoria}"></td>
+							<td>
+    <img th:src="@{'/imagenesCategoria/' + ${categoria.imagenCategoria.archivoImagen}}"
+         class="img-thumbnail">
+</td>
+
+
 							<td class="text-center"><a
 								th:href="@{categoria/editar/{idCategoria} (idCategoria=${categoria.idCategoria})}"
 								class="btn btn-warning"> <i class="fas fa-edit"></i><span
